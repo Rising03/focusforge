@@ -1,0 +1,43 @@
+{
+  "name": "focusforge",
+  "version": "1.0.0",
+  "description": "A production-grade discipline and daily focus web application for students to build consistency, track progress, and optimize their daily routines",
+  "keywords": [
+    "student",
+    "discipline",
+    "productivity",
+    "habit-tracking",
+    "focus",
+    "routine",
+    "ai-powered",
+    "time-management"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/focusforge.git"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm run test",
+    "install:all": "npm install && cd frontend && npm install --legacy-peer-deps && cd ../backend && npm install",
+    "verify": "node verify-setup.js",
+    "setup": "npm run install:all && npm run verify"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "jsdom": "^27.4.0",
+    "node-fetch": "^2.7.0"
+  }
+}

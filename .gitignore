@@ -1,0 +1,240 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Test files and debug scripts (development artifacts)
+test-*.js
+test-*.ts
+test-*.html
+debug-*.js
+debug-*.ts
+debug-*.html
+check-*.js
+verify-*.js
+apply-*.js
+diagnose-*.js
+force-*.js
+create-*.js
+add-*.js
+view-*.js
+quick-*.js
+frontend-debug-script.js
+
+# Status and fix documentation (development artifacts)
+*-FIX.md
+*-COMPLETE.md
+*-STATUS.md
+*-FIXED.md
+*-READY.md
+*-WORKING.md
+*-RESOLVED.md
+*-SUMMARY.md
+*-REPORT.md
+*-GUIDE.md
+ALL_*.md
+BEFORE_AFTER_*.md
+QUICK_*.md
+TEST_*.md
+FIX_*.md
+SYSTEM_*.md
+PROFILE_*.md
+ROUTINE_*.md
+LOGIN_*.md
+OAUTH_*.md
+THEME_*.md
+UI_*.md
+EVENING_*.md
+HABIT_*.md
+WAKE_*.md
+DATABASE_*.md
+AUTHENTICATION_*.md
+NAVIGATION_*.md
+PREMIUM_*.md
+LIGHT_*.md
+DARK_*.md
+COMPLETION_*.md
+QUESTIONNAIRE_*.md
+SCHEDULE_*.md
+IMPROVED_*.md
+DYNAMIC_*.md
+ENERGY_*.md
+FINAL_*.md
+SUCCESS_*.md
+APP_*.md
+CACHE_*.md
+BROWSER_*.md
+IMMEDIATE_*.md
+CURRENT_*.md
+TOKEN_*.md
+CONVERSATION_*.md
+TASK_*.md
+REDESIGN_*.md
+ULTRA_*.md
+COMPLETE_*.md
+VISUAL_*.md
+FETCH_*.md
+HABITS_*.md
+PROFILE_*.md
+KNOWN_*.md
+REQUIREMENTS_*.md
+WHITE_*.md
+DEBUG_*.md
+WHAT_*.md
+READY_*.md
+TRY_*.md
+HOW_*.md
+START_*.md
+CONTINUATION_*.md
+VERIFICATION_*.md
+
+# Keep essential documentation
+!README.md
+!DEPLOYMENT.md
+!requirements.txt
+!deployment-checklist.md
+
+# Frontend test files
+frontend/public/test-*.html
+frontend/public/debug-*.html
+frontend/public/fix-*.html
+frontend/public/clear-*.html
+frontend/test-*.html
+frontend/debug-*.html
+
+# Backend test and debug files
+backend/test-*.js
+backend/test-*.ts
+backend/debug-*.js
+backend/debug-*.ts
+backend/check-*.js
+backend/verify-*.js
+backend/apply-*.js
+backend/diagnose-*.js
+backend/force-*.js
+backend/create-*.js
+backend/add-*.js
+backend/view-*.js
+backend/setup-*.md
+
+# Batch files for testing
+*.bat
+
+# Keep essential setup files
+!setup.bat
+!setup.sh
