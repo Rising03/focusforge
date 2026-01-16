@@ -4,12 +4,15 @@ import MockDatabase from './mockDatabase';
 import dotenv from 'dotenv';
 import path from 'path';
 
-// Ensure environment variables are loaded
-dotenv.config({ path: path.join(__dirname, '../../.env') });
+// Load environment variables from .env file (only in development)
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({ path: path.join(__dirname, '../../.env') });
+}
 
 console.log('=== DATABASE CONFIG ===');
+console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'SET' : 'NOT SET');
+console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'SET (length: ' + process.env.DATABASE_URL.length + ')' : 'NOT SET');
 
 // Create pool - prefer DATABASE_URL for cloud deployments
 const pool = new Pool(
