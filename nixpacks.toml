@@ -1,11 +1,17 @@
 [phases.setup]
-nixPkgs = ["nodejs_20", "npm-10_x"]
+nixPkgs = ["nodejs_22", "npm-10_x"]
 
 [phases.install]
 cmds = ["npm ci"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = [
+  "npm run install:all",
+  "cd frontend && rm -rf node_modules/.cache",
+  "cd frontend && npm rebuild",
+  "npm run build:frontend",
+  "npm run build:backend"
+]
 
 [start]
 cmd = "npm run start:prod"
