@@ -23,13 +23,15 @@ export class GoogleAuthService {
       ? 'https://focusforge-production-33cd.up.railway.app/api/auth/google/callback'
       : 'http://localhost:3001/api/auth/google/callback';
       
-    console.log('GoogleAuthService initialized:', {
-      NODE_ENV: process.env.NODE_ENV,
-      RAILWAY_ENVIRONMENT: process.env.RAILWAY_ENVIRONMENT,
-      RAILWAY_PUBLIC_DOMAIN: process.env.RAILWAY_PUBLIC_DOMAIN,
-      isProduction,
-      redirectUri
-    });
+    // Only log in development or when explicitly debugging
+    if (process.env.NODE_ENV !== 'production' || process.env.DEBUG_OAUTH) {
+      console.log('GoogleAuthService initialized:', {
+        NODE_ENV: process.env.NODE_ENV,
+        RAILWAY_ENVIRONMENT: process.env.RAILWAY_ENVIRONMENT,
+        isProduction,
+        redirectUri
+      });
+    }
       
     this.client = new OAuth2Client(
       GOOGLE_CLIENT_ID,
