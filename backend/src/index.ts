@@ -67,6 +67,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Health check endpoints
 app.get('/health', (req, res) => {
+  // Simple health check for Railway deployment health checks
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
