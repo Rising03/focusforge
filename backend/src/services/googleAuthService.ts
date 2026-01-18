@@ -13,10 +13,28 @@ export class GoogleAuthService {
   private client: OAuth2Client;
 
   constructor() {
+    // Use environment-specific redirect URI
+    // Check multiple indicators for production environment
+    const isProduction = process.env.NODE_ENV === 'production' || 
+                        process.env.RAILWAY_ENVIRONMENT === 'production' ||
+                        process.env.RAILWAY_PUBLIC_DOMAIN?.includes('railway.app');
+    
+    const redirectUri = isProduction
+      ? 'https://focusforge-production-33cd.up.railway.app/api/auth/google/callback'
+      : 'http://localhost:3001/api/auth/google/callback';
+      
+    console.log('GoogleAuthService initialized:', {
+      NODE_ENV: process.env.NODE_ENV,
+      RAILWAY_ENVIRONMENT: process.env.RAILWAY_ENVIRONMENT,
+      RAILWAY_PUBLIC_DOMAIN: process.env.RAILWAY_PUBLIC_DOMAIN,
+      isProduction,
+      redirectUri
+    });
+      
     this.client = new OAuth2Client(
       GOOGLE_CLIENT_ID,
       GOOGLE_CLIENT_SECRET,
-      'http://localhost:3001/api/auth/google/callback'
+      redirectUri
     );
   }
 
