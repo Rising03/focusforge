@@ -16,23 +16,28 @@ export class GoogleAuthService {
 
   constructor() {
     // Use environment-specific redirect URI
-    // Check multiple indicators for production environment
-    const isProduction = process.env.NODE_ENV === 'production' || 
-                        process.env.RAILWAY_ENVIRONMENT === 'production' ||
-                        process.env.RAILWAY_PUBLIC_DOMAIN?.includes('railway.app');
+    // Priority: 1. Explicit OAUTH_REDIRECT_URI, 2. Environment detection, 3. Default localhost
+    let redirectUri = process.env.OAUTH_REDIRECT_URI;
     
-    const redirectUri = isProduction
-      ? 'https://focusforge-production-33cd.up.railway.app/api/auth/google/callback'
-      : 'http://localhost:3001/api/auth/google/callback';
+    if (!redirectUri) {
+      // Check multiple indicators for production environment
+      const isProduction = process.env.NODE_ENV === 'production' || 
+                          process.env.RAILWAY_ENVIRONMENT === 'production' ||
+                          process.env.RAILWAY_PUBLIC_DOMAIN?.includes('railway.app');
+      
+      redirectUri = isProduction
+        ? 'https://focusforge-production-33cd.up.railway.app/api/auth/google/callback'
+        : 'http://localhost:3001/api/auth/google/callback';
+    }
       
     // FORCE LOGGING FOR DEBUGGING
     console.log('=== GoogleAuthService initialized ===', {
       NODE_ENV: process.env.NODE_ENV,
       RAILWAY_ENVIRONMENT: process.env.RAILWAY_ENVIRONMENT,
       RAILWAY_PUBLIC_DOMAIN: process.env.RAILWAY_PUBLIC_DOMAIN,
+      OAUTH_REDIRECT_URI: process.env.OAUTH_REDIRECT_URI,
       DEBUG_OAUTH: process.env.DEBUG_OAUTH,
-      isProduction,
-      redirectUri
+      finalRedirectUri: redirectUri
     });
       
     this.client = new OAuth2Client(
