@@ -2,6 +2,8 @@ import { OAuth2Client } from 'google-auth-library';
 import { GoogleOAuthUser } from '../types/auth';
 import { logger } from '../utils/logger';
 
+console.log('=== GoogleAuthService module loaded ===');
+
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 
